@@ -10,10 +10,11 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:src="@drawable/goodnightmoon"
             android:id="@+id/imageview_cover_art"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop" />
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:scaleType="fitXY" />
 
         <ImageView
             android:id="@+id/imageview_favorite"

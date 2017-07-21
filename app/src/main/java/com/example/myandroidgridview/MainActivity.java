@@ -1,12 +1,19 @@
 package com.example.myandroidgridview;
 
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    private static final String favoriteBooksKey = "favoriteBooksKey";
+    public static final String TAG = "mytag";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +33,42 @@ public class MainActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
         });
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        // construct list of your favorite books
+        final ArrayList<String> favoriteBooksArray = new ArrayList<>();
+        for(Book book: books){
+            if (book.getIsFavorite()) {
+                favoriteBooksArray.add(book.getName());
+            }
+        }
+
+        outState.putStringArrayList(favoriteBooksKey, favoriteBooksArray);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        //get saved list of favorite books
+        final ArrayList<String> favoriteBooksArray = savedInstanceState.getStringArrayList(favoriteBooksKey);
+
+        // look at all books and find the favorites
+        if (favoriteBooksArray != null) {
+            for(String bookName : favoriteBooksArray){
+                for(Book book : books){
+                    if (book.getName().equals(bookName)){
+                        book.setIsFavorite(true);
+                        break;
+                    }
+                }
+            }
+        }
 
     }
 

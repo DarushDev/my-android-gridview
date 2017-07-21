@@ -2,6 +2,8 @@ package com.example.myandroidgridview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,8 +14,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         GridView gridView = (GridView) findViewById(R.id.gridview);
-        BooksAdapter adapter = new BooksAdapter(this, books);
+        final BooksAdapter adapter = new BooksAdapter(this, books);
+
         gridView.setAdapter(adapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Book book = books[i];
+                book.toggleFavorite();
+                // Redraw the GridView
+                adapter.notifyDataSetChanged();
+            }
+        });
 
     }
 

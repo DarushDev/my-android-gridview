@@ -59,6 +59,7 @@ public class BooksAdapter extends BaseAdapter {
         imageView.setImageResource(book.getImageResource());
         nameTextView.setText(book.getName());
         authorTextView.setText(book.getAuthor());
+        imageViewFavorite.setImageResource(book.getIsFavorite()?R.drawable.star_enabled:R.drawable.star_disabled);
 
         return view;
 

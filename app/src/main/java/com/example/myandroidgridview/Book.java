@@ -1,24 +1,24 @@
 package com.example.myandroidgridview;
 
 public class Book {
-    private final int name;
-    private final int author;
+    private final String name;
+    private final String author;
     private final int imageResource;
     private boolean isFavorite = false;
     private final String imageUrl;
 
-    public Book(int name, int author, int imageResource, String imageUrl) {
+    public Book(String name, String author, int imageResource, String imageUrl) {
         this.name = name;
         this.author = author;
         this.imageResource = imageResource;
         this.imageUrl = imageUrl;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public int getAuthor() {
+    public String getAuthor() {
         return author;
     }
 

@@ -47,21 +47,40 @@ public class BooksAdapter extends BaseAdapter {
         // 2
         if(view == null){
             view = LayoutInflater.from(mContext).inflate(R.layout.book_layout, null);
+
+            final ImageView imageViewCoverArt = view.findViewById(R.id.imageview_cover_art);
+            final TextView nameTextView = view.findViewById(R.id.textview_book_name);
+            final TextView authorTextView = view.findViewById(R.id.textview_book_author);
+            final ImageView imageViewFavorite = view.findViewById(R.id.imageview_favorite);
+
+            final ViewHolder viewHolder = new ViewHolder(nameTextView, authorTextView, imageViewCoverArt, imageViewFavorite);
+            view.setTag(viewHolder);
         }
 
-        // 3
-        final ImageView imageView = view.findViewById(R.id.imageview_cover_art);
-        final TextView nameTextView = view.findViewById(R.id.textview_book_name);
-        final TextView authorTextView = view.findViewById(R.id.textview_book_author);
-        final ImageView imageViewFavorite = view.findViewById(R.id.imageview_favorite);
-
         // 4
-        imageView.setImageResource(book.getImageResource());
-        nameTextView.setText(book.getName());
-        authorTextView.setText(book.getAuthor());
-        imageViewFavorite.setImageResource(book.getIsFavorite()?R.drawable.star_enabled:R.drawable.star_disabled);
+        final ViewHolder viewHolder = (ViewHolder)view.getTag();
+        viewHolder.imageViewCoverArt.setImageResource(book.getImageResource());
+        viewHolder.nameTextView.setText(book.getName());
+        viewHolder.authorTextView.setText(book.getAuthor());
+        viewHolder.imageViewFavorite.setImageResource(book.getIsFavorite() ? R.drawable.star_enabled : R.drawable.star_disabled);
 
         return view;
 
     }
+
+    // Your "view holder" that holds references to each subview
+    private class ViewHolder {
+        private final TextView nameTextView;
+        private final TextView authorTextView;
+        private final ImageView imageViewCoverArt;
+        private final ImageView imageViewFavorite;
+
+        public ViewHolder(TextView nameTextView, TextView authorTextView, ImageView imageViewCoverArt, ImageView imageViewFavorite) {
+            this.nameTextView = nameTextView;
+            this.authorTextView = authorTextView;
+            this.imageViewCoverArt = imageViewCoverArt;
+            this.imageViewFavorite = imageViewFavorite;
+        }
+    }
+
 }

@@ -73,15 +73,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Book[] books = {
-            new Book("Very Hungry Caterpillar Board Book", "Eric Carle", R.drawable.theveryhungrycaterpillar, ""),
-            new Book("Where the Wild Things Are", "Maurice Sendak", R.drawable.wherethewildthingsare, ""),
-            new Book("Green Eggs and Ham", "Dr. Seuss", R.drawable.greenegsandham, ""),
-            new Book("Goodnight Moon", "Margaret Wise Brown", R.drawable.goodnightmoon, ""),
-            new Book("The Cat in the Hat", "Dr. Seuss", R.drawable.thecatinthehat, ""),
-            new Book("\tThe Giving Tree", "Shel Silverstein", R.drawable.thegivingtree, ""),
-            new Book("If You Give a Mouse a Cookie", "Laura Joffe Numeroff", R.drawable.ifyougiveamouseacookie, ""),
-            new Book("The Lorax", "Dr. Seuss", R.drawable.thelorax, ""),
-            new Book("The Monster at the End of this Book", "Jon Stone", R.drawable.themonsterattheendofthisbook, ""),
-            new Book("Madeline", "Ludwig Bemelmans", R.drawable.madeline, "")
+            new Book("Very Hungry Caterpillar Board Book", "Eric Carle", R.drawable.theveryhungrycaterpillar, "http://i.imgur.com/QuFnI4Vl.jpg"),
+            new Book("Where the Wild Things Are", "Maurice Sendak", R.drawable.wherethewildthingsare, "http://i.imgur.com/bA2jqeSl.jpg"),
+            new Book("Green Eggs and Ham", "Dr. Seuss", R.drawable.greenegsandham, "http://i.imgur.com/CcxTkkKl.jpg"),
+            new Book("Goodnight Moon", "Margaret Wise Brown", R.drawable.goodnightmoon, "http://i.imgur.com/5NkBjVwl.jpg"),
+            new Book("The Cat in the Hat", "Dr. Seuss", R.drawable.thecatinthehat, "http://i.imgur.com/NeVUdFil.jpg"),
+            new Book("\tThe Giving Tree", "Shel Silverstein", R.drawable.thegivingtree, "http://i.imgur.com/lLa485el.jpg"),
+            new Book("If You Give a Mouse a Cookie", "Laura Joffe Numeroff", R.drawable.ifyougiveamouseacookie, "http://i.imgur.com/q6HhjTMl.jpg"),
+            new Book("The Lorax", "Dr. Seuss", R.drawable.thelorax, "http://i.imgur.com/wgAFaqIl.jpg"),
+            new Book("The Monster at the End of this Book", "Jon Stone", R.drawable.themonsterattheendofthisbook, "http://i.imgur.com/H4dnNPKl.jpg"),
+            new Book("Madeline", "Ludwig Bemelmans", R.drawable.madeline, "http://i.imgur.com/V8IdasGl.jpg")
     };
 }

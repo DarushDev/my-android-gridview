@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class BooksAdapter extends BaseAdapter {
 
     private final Context mContext;
@@ -59,7 +61,8 @@ public class BooksAdapter extends BaseAdapter {
 
         // 4
         final ViewHolder viewHolder = (ViewHolder)view.getTag();
-        viewHolder.imageViewCoverArt.setImageResource(book.getImageResource());
+        //viewHolder.imageViewCoverArt.setImageResource(book.getImageResource());
+        Picasso.with(mContext).load(book.getImageUrl()).into(viewHolder.imageViewCoverArt);
         viewHolder.nameTextView.setText(book.getName());
         viewHolder.authorTextView.setText(book.getAuthor());
         viewHolder.imageViewFavorite.setImageResource(book.getIsFavorite() ? R.drawable.star_enabled : R.drawable.star_disabled);
